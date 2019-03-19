@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cognitive Processes Study</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+	<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+    <div id="centerBox">
+        <div id="initialInstructionText">
+            <p>Trial </p>
+            <p id="trialNumber">1</p>
+            <p>: You will be presented with a list of 20 words. You will then be asked to recall as many of the words as possible in any order. Music may or may not be present. Use the sound test button to adjust your volume to a comfortable level.</p>
+        </div>
+        <div id="retrievalInstructionText">
+            <p>On the provided paper, write down as many of the displayed words as you can recall. Click finish when you cannot recall any more words.</p>
+        </div>
+        <div id="thankYouText">
+            <p>Thank you for your participation in this study! You may now close this window.</p>
+        </div>
+        <div id="wordText"></div>
+        <button id="finishButton" onclick="awaitNextTrial()">Finish Trial</button>
+        <button id="soundTestButton" onclick="soundTest()">Sound Test</button><br/>
+        <button id="startTrialButton" onclick="startTrial()">Start Trial</button>
+        <div id="participantNumber">Participant number: <br/>
+            <input type="text" id="participantInput" value="">
+        </div>
+    </div>
+    <audio id="lowAudio1"><source src="netid_only/Gymnopedies Final.mp3" type="audio/mpeg"></audio>
+    <audio id="lowAudio2"><source src="netid_only/Ashokan Farewell Final.mp3" type="audio/mpeg"></audio>
+    <audio id="highAudio1"><source src="netid_only/Symphony No. 5, Movement IV Final.mp3" type="audio/mpeg"></audio>
+    <audio id="highAudio2"><source src="netid_only/Blow It Up, Start Again Final.mp3" type="audio/mpeg"></audio>
+    <audio id="soundTestAudio"><source src="netid_only/Sound Test.mp3" type="audio/mpeg"></audio>
+    <script>
+        document.getElementById("thankYouText").style.display = "none";
+        document.getElementById("wordText").style.display = "none";
+        document.getElementById("finishButton").style.display = "none";
+        document.getElementById("retrievalInstructionText").style.display = "none";
+        document.getElementById("centerBox").style.paddingTop = screen.height/5 + "px";
+    </script>
+</body>
+</html>
